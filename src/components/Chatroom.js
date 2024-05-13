@@ -195,17 +195,6 @@ export default function Chatroom() {
     }
   };
 
-  // setTimeout(() => {
-    // const qe = query(collection(db, "messages"));
-    // const unsubscribe = onSnapshot(qe, (querySnapshot) => {
-    //   const cities = [];
-    //   querySnapshot.forEach((doc) => {
-    //     if (newId == doc.data().type) cities.push(doc.data().desc);
-    //   });
-    //   if (messageList.length!=NewmessageList) getMessageList();
-    // });
-  // }, 12000);
-
   const handleImageClick = () => {
     window.scrollTo({
       left: 0,
