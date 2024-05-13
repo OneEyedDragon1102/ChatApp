@@ -21,7 +21,7 @@ function App() {
   const [userSign, setuserSign] = useState("");
 
   const auth = getAuth();
-  
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
@@ -41,11 +41,10 @@ function App() {
             userSign == "" ? (
               <Auth />
             ) : (
-
-                <ChatroomList />
+              <ChatroomList />
             )
           }
-        ></Route>
+        />
         <Route path="/room/:id" element={<Chatroom />}></Route>
         <Route path="/rooms" element={<><ChatroomList /></>}></Route>
       </Routes>
