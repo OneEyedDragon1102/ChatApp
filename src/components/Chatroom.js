@@ -34,13 +34,7 @@ import {
 } from "firebase/storage";
 
 export default function Chatroom() {
-  //   const handleFireBaseUpload = e => {
-  //     e.preventDefault()
-  //   console.log('start of upload')
-  //   // async magic goes here...
-  //   if(imageAsFile === '') {
-  //     console.error(`not an image, the image file is a ${typeof(imageAsFile)}`)
-  //   }
+  
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
   const imagesListRef = ref(storage, "images/");
