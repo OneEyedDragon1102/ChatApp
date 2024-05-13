@@ -63,16 +63,6 @@ export default function Chatroom() {
     }
   };
 
-  // useEffect(() => {
-  //   listAll(imagesListRef).then((response) => {
-  //     response.items.forEach((item) => {
-  //       getDownloadURL(item).then((url) => {
-  //         setImageUrls((prev) => [...prev, url]);
-  //       });
-  //     });
-  //   });
-  // }, []);
-
   const params = useParams();
   const id = params.id;
   let newId = "";
