@@ -18,11 +18,11 @@ import { useNavigate } from "react-router-dom";
 
 function ChatroomList() {
   let navigate = useNavigate();
-  
+
   const [checkroomId, setcheckroomId] = useState("none");
   const [vroomList, setvroomList] = useState([])
   const [checkroomValid, setcheckroomValid] = useState("none");
-  
+
   const [FullroomList, setFullroomList] = useState([])
   const roomsCollectionRef = collection(db, "rooms");
   const [roomList, setroomList] = useState([]);
@@ -172,7 +172,7 @@ function ChatroomList() {
             onChange={(e) => {
               settitlefoot(e.target.value);
             }}
-            style={{ marginLeft: "2%" , webkitTextSecurity: "disc" }}
+            style={{ marginLeft: "2%", webkitTextSecurity: "disc" }}
           />
 
           {/* <label> */}

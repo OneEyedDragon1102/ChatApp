@@ -66,8 +66,11 @@ export default function Chatroom() {
   const params = useParams();
   const id = params.id;
   let newId = "";
+
   for (let ip = 0; ip < id.length; ip++) {
-    if (id[ip] >= "0" && id[ip] <= "9") newId += id[ip];
+    if (id[ip] >= "0" && id[ip] <= "9") {
+      newId += id[ip];
+    }
   }
 
   const [messageList, setmessageList] = useState([]);
@@ -146,11 +149,14 @@ export default function Chatroom() {
     const user = auth.currentUser;
 
     if (user != null) {
-      if (user.photoURL != null) setphotourl(user.photoURL);
-      else
+      if (user.photoURL != null){
+        setphotourl(user.photoURL);
+      } 
+      else{
         setphotourl(
           "https://th.bing.com/th/id/OIP.zBut8QVH36Vn_Mn84OznCAHaHa?pid=ImgDet&rs=1"
         );
+      }
     }
   }, []);
 
@@ -171,6 +177,7 @@ export default function Chatroom() {
       console.error(err);
     }
   };
+
   const [inputer, setinputer] = useState("");
   const handleinput = (e) => {
     setInput(e.target.value);
@@ -217,7 +224,9 @@ export default function Chatroom() {
       setCopySuccess("none");
     }
   };
+
   let val = "start";
+  
   return (
     <div style={{ textAlign: "-webkit-center" }}>
       <div
