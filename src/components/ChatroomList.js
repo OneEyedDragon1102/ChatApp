@@ -26,14 +26,13 @@ function ChatroomList() {
   const [FullroomList, setFullroomList] = useState([])
   const roomsCollectionRef = collection(db, "rooms");
   const [roomList, setroomList] = useState([]);
-  // const [inputer, setinputer] = useState([]);
+  
   const [title, settitle] = useState("");
   const [titlefoot, settitlefoot] = useState("");
   const rand = Math.random().toString().substr(2, 8);
 
   const createmessage = async (e) => {
     e.preventDefault();
-    // setinputer("");
     const ans = Number(new Date());
 
     try {
@@ -45,8 +44,8 @@ function ChatroomList() {
 
       getroomList();
       return navigate(`/room/${rand}`);
-      // location.href = ;
-    } catch (err) {
+    } 
+    catch (err) {
       console.error(err);
     }
   };
@@ -58,79 +57,75 @@ function ChatroomList() {
         orderBy("createdAt", "asc"),
         limit(6)
       );
+    
       const data = await getDocs(q);
+    
       const filteredData = data.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      // console.log(filteredData,);
+    
       setroomList(filteredData);
-    } catch (err) {
+    }
+    catch (err) {
       console.error(err);
     }
   };
+  
   const getFullroomList = async () => {
     try {
       const q = query(
         roomsCollectionRef,
         orderBy("createdAt", "asc"),
-        // limit(6)
       );
+      
       const data = await getDocs(q);
+      
       const filteredData = data.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      // console.log(filteredData,);
+      
       setFullroomList(filteredData);
-    } catch (err) {
+    } 
+    catch (err) {
       console.error(err);
     }
   };
-  const HandleInput = (e) => {
-    // let ans = 0;
-    // roomList.forEach((val) => {
-    //   rand == val.ider ? ans++ : (ans = ans);
-    // });
 
+  const HandleInput = (e) => {
     if (title.length == 0) {
       setcheckroomId("block");
-    } else {
+    } 
+    else {
       setcheckroomId("none");
       e.preventDefault();
       createmessage(e);
     }
   };
-  // let Deny="";
 
   const HandleInputFoot = (e) => {
     let ans = 0;
-    // console.log(titlefoot);
+
     FullroomList.forEach((val) => {
       titlefoot == val.ider ? ans++ : (ans = ans);
-      // console.log(val.ider);
-      // console.log(val);
     });
 
     if (ans == 0) {
-      // console.log("hhh");
       setcheckroomValid("block");
-      // Deny="room";
-    } else {
-      // console.log("cbhhe");
+    } 
+    else {
       setcheckroomValid("none");
+    
       return navigate(`/room/${titlefoot}`);
-      // Deny="";
     }
   };
 
   useEffect(() => {
     getroomList();
     getFullroomList();
-    // vroomList();
   }, []);
 
-  // console.log(roomList);
   return (
     <>
       <div style={{ marginTop: "5%", display: "flex", flexDirection: "column", justifyContent: "center",}}>
