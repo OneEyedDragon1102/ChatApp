@@ -14,9 +14,7 @@ export function Auth() {
   });
   useEffect(() => {
     dispatch({ type: "username_change", payload: Name });
-  }, [Name]);
-  // useState
-  // console.log(username);
+  }, [Name]);s
 
   const signin = async () => {
     try {
