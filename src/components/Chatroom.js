@@ -34,7 +34,7 @@ import {
 } from "firebase/storage";
 
 export default function Chatroom() {
-  
+
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
   const imagesListRef = ref(storage, "images/");
@@ -134,7 +134,7 @@ export default function Chatroom() {
       });
 
       setDocId(filteredDocerData.reverse());
-   } catch (err) {
+    } catch (err) {
       console.error(err);
     }
   };
@@ -155,13 +155,12 @@ export default function Chatroom() {
   }, []);
 
   const deleter = async (val) => {
-    let ans  = window.confirm("Really Want to Delete it ! ");
-    if (ans==true)
-    {
+    let ans = window.confirm("Really Want to Delete it ! ");
+    if (ans == true) {
       await deleteDoc(doc(messagesCollectionRef, messageList[val - 1].id));
       getMessageList();
     }
-    };
+  };
 
   const [Input, setInput] = useState("");
 
@@ -220,7 +219,7 @@ export default function Chatroom() {
   };
   let val = "start";
   return (
-    <div style={{ textAlign: "-webkit-center" }}>      
+    <div style={{ textAlign: "-webkit-center" }}>
       <div
         style={{
           display: "flex",
@@ -245,7 +244,7 @@ export default function Chatroom() {
           }}
         >
           {/* Id :: {newId} */}
-          Copy Group Id 
+          Copy Group Id
         </button>
 
         <button className="logoutBtn">
@@ -299,15 +298,12 @@ export default function Chatroom() {
                 borderRadius: "8px",
                 margin: "5%",
                 maxWidth: "728px",
-                justifyContent: `${
-                  ele.userId === auth.currentUser.uid ? "end" : "start"
-                }`,
-                justifyContent: `${
-                  ele.userId === auth.currentUser.uid ? "end" : "start"
-                }`,
-                flexDirection: `${
-                  ele.userId === auth.currentUser.uid ? "row-reverse" : "row"
-                }`,
+                justifyContent: `${ele.userId === auth.currentUser.uid ? "end" : "start"
+                  }`,
+                justifyContent: `${ele.userId === auth.currentUser.uid ? "end" : "start"
+                  }`,
+                flexDirection: `${ele.userId === auth.currentUser.uid ? "row-reverse" : "row"
+                  }`,
               }}
             >
               <div style={{ display: "none" }}> {ind++}</div>
@@ -352,13 +348,12 @@ export default function Chatroom() {
                     wordBreak: "break-word",
                     // lineHeight:"normal",
                     // pointer:"cursor",
-                    backgroundColor: `${
-                      ele.userId !== auth.currentUser.uid
+                    backgroundColor: `${ele.userId !== auth.currentUser.uid
                         ? "green"
                         : "hwb(204 29% 22%)"
-                    }`,
+                      }`,
                   }}
-                  
+
                 >
                   {!ele.desc ? (
                     <img
@@ -373,12 +368,14 @@ export default function Chatroom() {
                       src={ele.Imgurl}
                     />
                   ) : (
-                    ele.desc 
-                  )} 
+                    ele.desc
+                  )}
                   {/* <div style={{display:`${ele.userId !== auth.currentUser.uid?"none":"visible"}`}}>&nbsp;</div>  */}
-                  <img       onClick={ele.userId == auth.currentUser.uid ? ()=>{deleter(ind)}:console.log("s")}
-            style={{alignSelf: "center", zoom: "50%", cursor: "pointer",marginLeft:"11px",display:`${ele.userId !== auth.currentUser.uid?
-                    "none":"visible"}` }} src={bin} />
+                  <img onClick={ele.userId == auth.currentUser.uid ? () => { deleter(ind) } : console.log("s")}
+                    style={{
+                      alignSelf: "center", zoom: "50%", cursor: "pointer", marginLeft: "11px", display: `${ele.userId !== auth.currentUser.uid ?
+                        "none" : "visible"}`
+                    }} src={bin} />
                 </div>
                 <div
                   className="timer"
@@ -388,11 +385,10 @@ export default function Chatroom() {
                     borderRadius: "8px",
                     margin: "3px",
                     width: "fit-content",
-                    backgroundColor: `${
-                      ele.userId !== auth.currentUser.uid
+                    backgroundColor: `${ele.userId !== auth.currentUser.uid
                         ? "green"
                         : "hwb(204 29% 22%)"
-                    }`,
+                      }`,
                   }}
                 >
                   {ele.Date}
