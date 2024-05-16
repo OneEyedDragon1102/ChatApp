@@ -407,10 +407,6 @@ export default function Chatroom() {
           );
         })}
       </div>
-      {/* <div style={{marginTop:"4%"}}></div> */}
-      {/* <div className="footerDiv">
-          <div className="footerr" style={{ marginRight:window.innerWidth<=730 ? "1%" : window.innerWidth<=1000 ?"2%" : "14%" }} > <img src={downer} onClick={handleImageClick} /> </div>
-      </div> */}
 
       <div className="footerDiv">
         <form className="footer" onSubmit={createmessage}>
