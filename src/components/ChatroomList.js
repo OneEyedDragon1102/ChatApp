@@ -129,9 +129,9 @@ function ChatroomList() {
   return (
     <>
       <div style={{ marginTop: "5%", display: "flex", flexDirection: "column", justifyContent: "center",}}>
-        <div>
-          <input placeholder="Give us a Name" onChange={(e) => {settitle(e.target.value);}} style={{ marginLeft: "2%" }} />
-          <button style={{backgroundColor: "blue", borderRadius: "10%", padding: "1% 1%", marginBottom: "2%",}} onClick={HandleInput}>
+        <div >
+          <input placeholder="Give us a Name" onChange={(e) => {settitle(e.target.value);}} style={{ margin: "2%", borderRadius:"5px", padding:"0.25em"}} />
+          <button style={{backgroundColor: "green", borderRadius: "10px", padding: "0.5em", marginBottom: "2%",}} onClick={HandleInput}>
             Create a Room
           </button>
           <div style={{ color: "yellow", display: `${checkroomId}` }}>
@@ -140,8 +140,8 @@ function ChatroomList() {
         </div>
 
         <div className="align-items-center">
-          <input placeholder="Give us an Id" onChange={(e) => {settitlefoot(e.target.value);}} style={{ marginLeft: "2%", webkitTextSecurity: "disc" }}/>
-          <button onClick={HandleInputFoot} style={{backgroundColor: "blue", borderRadius: "10%", padding: "1% 1%"}}>
+          <input placeholder="Give us an Id" onChange={(e) => {settitlefoot(e.target.value);}} style={{ margin: "2%", borderRadius:"5px", padding:"0.25em", webkitTextSecurity: "disc" }}/>
+          <button onClick={HandleInputFoot} style={{backgroundColor: "blue", borderRadius: "10px", padding: "0.5em"}}>
             Join a Room
           </button>
           <div style={{ color: "yellow", display: `${checkroomValid}` }}>
@@ -156,7 +156,7 @@ function ChatroomList() {
           return (
             <>
               <div style={{color: "lavender", margin: "1%"}}>
-                <div className="op" style={{width: "170px", border: "solid", padding: "25px", margin: "5px"}}>
+                <div className="op" style={{width: "170px", border: "solid", padding: "25px", margin: "5px", borderRadius:"10px"}}>
                   <Link style={{ color: "cyan", textDecoration: "none" }} to={`/room/${e.ider}}`}>
                     {e.title}
                   </Link>

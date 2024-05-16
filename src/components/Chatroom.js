@@ -283,9 +283,8 @@ export default function Chatroom() {
           className="alert alert-warning"
           role="alert"
           style={{
-            color: "beige",
-            backgroundColor: "grey",
-            borderColor: "#ffecb5",
+            // color: "beige",
+            // backgroundColor: "lightblue",
             width: "150px",
             padding: "0%",
             display: `${CopySuccess}`,
@@ -369,7 +368,7 @@ export default function Chatroom() {
                       style={{
                         width: "250px",
                         height: "250px",
-                        borderRadius: "12px",
+                        borderRadius: "0px",
                         margin: "0px",
                         border: "solid",
                         borderColor: "darkcyan",
@@ -382,7 +381,7 @@ export default function Chatroom() {
                   {/* <div style={{display:`${ele.userId !== auth.currentUser.uid?"none":"visible"}`}}>&nbsp;</div>  */}
                   <img onClick={ele.userId == auth.currentUser.uid ? () => { deleter(ind) } : console.log("s")}
                     style={{
-                      alignSelf: "center", zoom: "50%", cursor: "pointer", marginLeft: "11px", display: `${ele.userId !== auth.currentUser.uid ?
+                      alignSelf: "center", zoom: "40%", cursor: "pointer", marginLeft: "11px", display: `${ele.userId !== auth.currentUser.uid ?
                         "none" : "visible"}`
                     }} src={bin} />
                 </div>
@@ -408,23 +407,21 @@ export default function Chatroom() {
         })}
       </div>
 
-      <div className="footerDiv">
-        <form className="footer" onSubmit={createmessage}>
+      <div className="footerDiv" >
+        <form className="footer" onSubmit={createmessage} style={{marginBottom:"3%"}}>
           <input
             className="inputer"
             placeholder="Your Message ..."
             onChange={handleinput}
             value={inputer}
+            style={{borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px", outlineWidth:"0px"}}
           />
-          {/* <div> */}
-
-          {/* </div> */}
-
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignSelf: "end",
+              
             }}
           >
             <img
@@ -445,6 +442,7 @@ export default function Chatroom() {
                 alignItems: "center",
                 justifyContent: "center",
                 marginTop: "50%",
+                borderTopRightRadius:"10px",borderBottomRightRadius:"10px"
                 // paddingTop: "20%",
               }}
             >

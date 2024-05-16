@@ -46,13 +46,13 @@ export function Auth() {
       <div className="Diver" style={{marginTop: "10%", marginBottom: "1%", textAlign: "center", color: "lightgreen"}}>
         <h1>Join Chat</h1>
         <div>
-          <input placeholder="Avatar Name" onChange={(e) => {setName(e.target.value)}} value={Name} style={{ marginTop: "2%" }}/>
+          <input placeholder="Avatar Name" onChange={(e) => {setName(e.target.value)}} value={Name} style={{ marginTop: "2%", borderRadius:"5px", padding:"0.5em" }}/>
         </div>
         <div style={{ color: "red", display: `${rr}` }}>
           Please Provide a Name
         </div>
         <div>
-          <button style={{paddingLeft: "20%", margin: "2%", paddingRight: "20%", display:"inline",backgroundColor: "darkslategrey"}} onClick={Name !== "" ? signin : tomper}>
+          <button style={{paddingLeft: "20%", margin: "2%", paddingRight: "20%", display:"inline",backgroundColor: "darkslategrey", borderRadius: "10px", fontWeight:"bold"}} onClick={Name !== "" ? signin : tomper}>
             Sign in with Google
           </button>
         </div>
